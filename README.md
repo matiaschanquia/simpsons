@@ -1,3 +1,10 @@
+# Proyecto con API de los Simpsons en ingles
+
+En este proyecto utilice una API de los Simpsons desde <a href="https://thesimpsonsquoteapi.glitch.me/">aquí</a>. En la que se visualizan el nombre del personaje, su imagen y una frase.
+
+La página permite agregar un personaje al azar, sin repetirse con los que ya existen. También permite agregar un personaje por su nombre completo (en ingles), sin importar las mayúsculas o minúsculas, restringiendo en caso de que el personaje ya exista o no se encuentre. 
+ 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
