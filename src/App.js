@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import "./global.css";
 import style from "./App.module.css";
 import Cards from "./components/Cards";
+import Footer from "./components/Footer";
 
 const chars = [
   {"quote":"Eat my shorts","character":"Bart Simpson","image":"https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FBartSimpson.png?1497567511638","characterDirection":"Right"},
@@ -71,10 +72,13 @@ function App() {
   }
 
   return (
-    <div className={style.container}>
-      <Header random={random} clickHandlerAdd={clickHandlerAdd}/>
-      <Cards characters={characters} deleteChar={deleteChar}/>
-    </div>
+    <>
+      <div className={style.container}>
+        <Header random={random} clickHandlerAdd={clickHandlerAdd}/>
+        <Cards characters={characters} deleteChar={deleteChar}/>
+      </div>
+      <Footer />
+    </>
   );
 }
 
