@@ -64,10 +64,16 @@ function App() {
     });
   }
 
+  const deleteChar = (index) => {
+    const arrayAux = [...characters];
+    arrayAux.splice(index, 1);
+    setCharacters([...arrayAux]);
+  }
+
   return (
     <div className={style.container}>
       <Header random={random} clickHandlerAdd={clickHandlerAdd}/>
-      <Cards characters={characters}/>
+      <Cards characters={characters} deleteChar={deleteChar}/>
     </div>
   );
 }
