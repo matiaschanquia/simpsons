@@ -46,7 +46,7 @@ function App() {
     fetch(`https://thesimpsonsquoteapi.glitch.me/quotes?count=999999`)
     .then((response) => response.json())
     .then((data) => {
-      const numRandom = Math.floor((Math.random()*(50)));
+      let numRandom = Math.floor((Math.random()*(50)));
       let existe = true;
       while(existe) {
         existe = false;
@@ -63,7 +63,7 @@ function App() {
       ])
     });
   }
-  
+
   return (
     <div className={style.container}>
       <Header random={random} clickHandlerAdd={clickHandlerAdd}/>
