@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #036AA8 url("https://www.xtrafondos.com/wallpapers/resized/los-simpsons-3462.jpg?s=large") no-repeat fixed center center;
+    background-size: cover;
+}

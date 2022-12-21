@@ -1,0 +1,49 @@
+.header {
+    background-color: rgba(255, 242, 0, 0.418);
+    border-radius: 20px;
+    border: 2px solid yellow;
+    display: flex;
+    padding: 20px 30px;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.header button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: greenyellow;
+    cursor: pointer;
+    border: 2px solid green;
+    color: #fff;
+    font-weight: 900;
+    text-shadow: 0px 1px 2px black;
+    transition: transform .2s ease-in-out;
+    font-size: 18px;
+}
+
+.header button:hover {
+    transform: scale(1.1);
+}
+
+.add {
+    display: flex;
+    gap: 20px;
+}
+
+.add > input {
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    font-size: 18px;
+    width: 70%;
+    max-width: 250px;
+}
+
+@media (max-width: 700px) {
+    .header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+}

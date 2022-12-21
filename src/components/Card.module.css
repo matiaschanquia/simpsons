@@ -1,0 +1,24 @@
+.card {
+    background-color: rgba(240, 248, 255, 0.596);
+    border-radius: 20px;
+    border: 1px solid black;
+    width: 90%;
+    max-width: 300px;
+    text-align: center;
+    padding: 20px 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card > img {
+    height: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+.card > h1 {
+    font-size: 27px;
+    color: yellow;
+    text-shadow: 2px 2px 2px black;
+}
