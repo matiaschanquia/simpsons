@@ -50,9 +50,9 @@ function App() {
       let existe = true;
       while(existe) {
         existe = false;
-        characters.forEach(elem => {
-          if(elem.character === data[numRandom].character) existe = true;
-        })
+        for(let i = 0; i < characters.length; i++) {
+          if(characters[i].character === data[numRandom].character)existe = true;
+        }
         if(existe) {
           numRandom = Math.floor((Math.random()*(50)));
         }
