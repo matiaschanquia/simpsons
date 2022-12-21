@@ -4,6 +4,7 @@ En este proyecto utilice una API de los Simpsons desde <a href="https://thesimps
 
 La página permite agregar un personaje al azar, sin repetirse con los que ya existen. También permite agregar un personaje por su nombre completo (en ingles), sin importar las mayúsculas o minúsculas, restringiendo en caso de que el personaje ya exista o no se encuentre. 
  
+<a href="https://api-simpsons.netlify.app/">Link de la página</a>
 
 # Getting Started with Create React App
 
