@@ -1,0 +1,61 @@
+.containerCharacter {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    gap: 20px;
+}
+
+.containerCharacter > div {
+    width: 50%;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 2px black;
+}
+
+.containerCharacter > div > h1 {
+    color: yellow;
+    margin-bottom: 20px;
+}
+
+.containerCharacter > figure {
+    width: 300px;
+}
+
+.containerCharacter > figure > img {
+    width: 100%;
+}
+
+.containerCharacter > button {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 8px 12px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: 2px solid black;
+    background-color: rgb(70, 70, 70);
+    color: #fff;
+    transition: transform .2s ease-in-out;
+}
+
+.containerCharacter > button:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 700px) {
+    .containerCharacter {
+        flex-direction: column;
+    }
+    .containerCharacter > div {
+        width: 90%;
+    }
+    .containerCharacter > div > h1 {
+        margin-top: 40px;
+    }
+    .containerCharacter > figure {
+        width: 70%;
+    }
+}

@@ -4,6 +4,9 @@ import "./global.css";
 import style from "./App.module.css";
 import Cards from "./components/Cards";
 import Footer from "./components/Footer";
+import { Routes, Route, Navigate } from "react-router-dom";
+import About from "./components/About";
+import Character from "./components/Character";
 
 const chars = [
   {"quote":"Eat my shorts","character":"Bart Simpson","image":"https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FBartSimpson.png?1497567511638","characterDirection":"Right"},
@@ -75,7 +78,13 @@ function App() {
     <>
       <div className={style.container}>
         <Header random={random} clickHandlerAdd={clickHandlerAdd}/>
-        <Cards characters={characters} deleteChar={deleteChar}/>
+        <Routes>
+          <Route path="/home" element={ <Cards characters={characters} deleteChar={deleteChar}/> }/>
+          <Route path="/about" element={ <About /> }/>
+          <Route path="/character/:name" element={ <Character /> }/>
+          <Route path="/" element={ <Navigate to="/home" replace/> }/>
+        </Routes>
+        
       </div>
       <Footer />
     </>

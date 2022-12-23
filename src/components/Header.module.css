@@ -5,7 +5,25 @@
     display: flex;
     padding: 20px 30px;
     justify-content: space-between;
+    align-items: center;
     margin: 20px 0;
+    gap: 20px;
+}
+
+.links > ul {
+    display: flex;
+    gap: 20px;
+}
+
+.links span {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 2px 2px 2px black;
+}
+
+.linkActive span {
+    color: #ADFF2E;
 }
 
 .header button {
@@ -42,7 +60,7 @@
 
 @media (max-width: 700px) {
     .header {
-        flex-wrap: wrap;
+        flex-direction: column;
         justify-content: center;
         gap: 20px;
     }
