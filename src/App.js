@@ -17,8 +17,10 @@ const chars = [
 function App() {
 
   const [characters, setCharacters] = useState(chars)
+  const [loading, setLoading] = useState(false);
 
   const clickHandlerAdd = (name) => {
+    setLoading(true);
     name = name.toLowerCase();
     fetch(`https://thesimpsonsquoteapi.glitch.me/quotes?character=${name}`)
     .then((response) => response.json())
@@ -43,28 +45,36 @@ function App() {
       } else {
         alert("No se pudo encontrar el personaje")
       }
+      setLoading(false);
     });
   } 
 
   const random = () => {
+    if(characters.length === 50) {
+      alert("Ya estan todos los personajes existentes!");
+      return;
+    }
+    setLoading(true);
     fetch(`https://thesimpsonsquoteapi.glitch.me/quotes?count=999999`)
     .then((response) => response.json())
     .then((data) => {
       let numRandom = Math.floor((Math.random()*(50)));
-      let existe = true;
-      while(existe) {
-        existe = false;
-        for(let i = 0; i < characters.length; i++) {
-          if(characters[i].character === data[numRandom].character)existe = true;
-        }
-        if(existe) {
+      let charsArray = ["hola"];
+      /*eslint-disable */
+      while(charsArray.length > 0) {
+        charsArray = [];
+        charsArray = characters.filter(char => char.character === data[numRandom].character);
+        console.log(charsArray);
+        if(charsArray.length > 0) {
           numRandom = Math.floor((Math.random()*(50)));
         }
       }
+      /*eslint-enable */
       setCharacters([
         ...characters,
         data[numRandom]
       ])
+      setLoading(false);
     });
   }
 
@@ -77,6 +87,7 @@ function App() {
   return (
     <>
       <div className={style.container}>
+        <h1 className={style.title}>The Simpsons App</h1>
         <Header random={random} clickHandlerAdd={clickHandlerAdd}/>
         <Routes>
           <Route path="/home" element={ <Cards characters={characters} deleteChar={deleteChar}/> }/>
@@ -84,6 +95,9 @@ function App() {
           <Route path="/character/:name" element={ <Character /> }/>
           <Route path="/" element={ <Navigate to="/home" replace/> }/>
         </Routes>
+        {
+          loading ? <div className={style.loading}> <img src="https://cdn-icons-png.flaticon.com/512/3305/3305803.png" alt="loading"/> </div> : <></>
+        }
         
       </div>
       <Footer />

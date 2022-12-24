@@ -10,7 +10,9 @@ body {
 }
 
 body {
+    padding-top: 20px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
     background: #036aa8
         url("https://media1.popsugar-assets.com/files/thumbor/bzZIujvmK6EiajFntYJeDoqMbvI/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2020/04/08/956/n/1922507/5b76eee404090c1b_The_Simpsons/i/Simpsons-Zoom-Background.png")
         no-repeat fixed center center;

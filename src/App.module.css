@@ -3,3 +3,42 @@
     max-width: 940px;
     margin: 0 auto;
 }
+
+.title {
+    text-align: center;
+    color: yellow;
+    text-shadow: 2px 2px 2px black;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.565);
+}
+
+.loading > img {
+    margin: auto;
+    animation: normal infinite girar 5s;
+    animation-timing-function: linear;
+    width: 50px;
+}
+
+.loading > img::selection {
+    background-color: transparent;
+}
+
+@keyframes girar {
+    to {
+        transform: rotate(0deg);
+    }
+    from {
+        transform: rotate(-360deg);
+    }
+}
