@@ -65,14 +65,12 @@ function App() {
         return exists;
       });
       const max = data.length
-      console.log(data);
       let numRandom = Math.floor((Math.random()*(max)));
       let charsArray = ["hola"];
       /*eslint-disable */
       while(charsArray.length > 0) {
         charsArray = [];
         charsArray = characters.filter(char => char.character === data[numRandom].character);
-        console.log(charsArray);
         if(charsArray.length > 0) {
           numRandom = Math.floor((Math.random()*(max)));
         }
