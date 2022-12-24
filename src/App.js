@@ -50,7 +50,7 @@ function App() {
   } 
 
   const random = () => {
-    if(characters.length === 50) {
+    if(characters.length === 23) {
       alert("Ya estan todos los personajes existentes!");
       return;
     }
@@ -58,7 +58,15 @@ function App() {
     fetch(`https://thesimpsonsquoteapi.glitch.me/quotes?count=999999`)
     .then((response) => response.json())
     .then((data) => {
-      let numRandom = Math.floor((Math.random()*(50)));
+      var hash = {};
+      data = data.filter(function(current) {
+        var exists = !hash[current.character];
+        hash[current.character] = true;
+        return exists;
+      });
+      const max = data.length
+      console.log(data);
+      let numRandom = Math.floor((Math.random()*(max)));
       let charsArray = ["hola"];
       /*eslint-disable */
       while(charsArray.length > 0) {
@@ -66,7 +74,7 @@ function App() {
         charsArray = characters.filter(char => char.character === data[numRandom].character);
         console.log(charsArray);
         if(charsArray.length > 0) {
-          numRandom = Math.floor((Math.random()*(50)));
+          numRandom = Math.floor((Math.random()*(max)));
         }
       }
       /*eslint-enable */
